@@ -4,7 +4,7 @@ import '../global.css';
 
 const _layout = () => {
   return (
-    <View>
+    <View className='flex-1'>
       <Slot />
     </View>
   );
