@@ -1,11 +1,10 @@
-import { View, Text } from 'react-native';
-import { StatusBar } from 'expo-status-bar';
-const Home = () => {
+import { View, Text, ActivityIndicator } from 'react-native';
+
+const StarterPage = () => {
   return (
     <View className='flex-1 justify-center items-center min-h-full '>
-      <Text className='text-red-500 text-3xl'>Home</Text>
-      <StatusBar />
+      <ActivityIndicator size='large' color='blue' />
     </View>
   );
 };
-export default Home;
+export default StarterPage;
