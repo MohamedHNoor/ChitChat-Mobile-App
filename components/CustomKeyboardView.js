@@ -1,6 +1,6 @@
 import { KeyboardAvoidingView, Platform, ScrollView } from 'react-native';
 
-const ios = Platform.OS == 'ios';
+const ios = Platform.OS === 'ios';
 
 const CustomKeyboardView = ({ children }) => {
   return (
