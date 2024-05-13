@@ -10,7 +10,7 @@ const MainLayout = () => {
   const router = useRouter();
 
   useEffect(() => {
-    // check if user is authenticated or not
+    // check if user is authenticated or not.
     if (typeof isAuthenticated === 'undefined') return;
     const inApp = segments[0] === '(app)';
 
