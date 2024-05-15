@@ -4,12 +4,12 @@ import { getFirestore, collection } from 'firebase/firestore';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const firebaseConfig = {
-  apiKey: 'AIzaSyAKCokMjt15E0Rlz_f_4TBgXldnNUw438Q',
-  authDomain: 'chitchat-b091c.firebaseapp.com',
-  projectId: 'chitchat-b091c',
-  storageBucket: 'chitchat-b091c.appspot.com',
-  messagingSenderId: '587874385889',
-  appId: '1:587874385889:web:73c6370545a473e45adca0',
+  apiKey: process.env.REACT_NATIVE_APP_FIREBASE_API_KEY,
+  authDomain: process.env.REACT_NATIVE_APP_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.REACT_NATIVE_APP_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.REACT_NATIVE_APP_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_NATIVE_APP_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_NATIVE_APP_FIREBASE_APP_ID,
 };
 
 // Initialize Firebase
