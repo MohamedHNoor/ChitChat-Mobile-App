@@ -1,4 +1,6 @@
 import React, { useState, useContext, createContext, useEffect } from 'react';
+import { onAuthStateChanged } from 'firebase/auth';
+import { Auth } from '../firebaseConfig';
 
 export const AuthContext = createContext();
 
@@ -7,8 +9,16 @@ export const AuthContextProvider = ({ children }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(undefined);
 
   useEffect(() => {
-    // onAuthStateChange
-    setIsAuthenticated(false);
+    const unsub = onAuthStateChanged(Auth, (user) => {
+      if (user) {
+        setIsAuthenticated(true);
+        setUser(user);
+      } else {
+        setIsAuthenticated(false);
+        setUser(null);
+      }
+    });
+    return unsub;
   }, []);
 
   const login = async (email, password) => {
